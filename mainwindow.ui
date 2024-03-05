@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 10.5pt &quot;Arial&quot;;
+background-color: rgb(46, 47, 48);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_Add">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>270</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);
+border-radius:8px;
+}
+QPushButton:hover{
+background-color: rgb(77, 78, 79);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}
+QPushButton:pressed{
+background-color: rgb(65, 66, 67);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Remove">
+    <property name="geometry">
+     <rect>
+      <x>258</x>
+      <y>270</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);
+border-radius:8px;
+}
+QPushButton:hover{
+background-color: rgb(77, 78, 79);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}
+QPushButton:pressed{
+background-color: rgb(65, 66, 67);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Remove</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ToolsList">
+    <property name="geometry">
+     <rect>
+      <x>478</x>
+      <y>270</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Tools List:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_ToolsList">
+    <property name="geometry">
+     <rect>
+      <x>568</x>
+      <y>274</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Upscaler</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Frame Interpolation</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Start">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>524</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);
+border-radius:8px;
+}
+QPushButton:hover{
+background-color: rgb(77, 78, 79);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}
+QPushButton:pressed{
+background-color: rgb(65, 66, 67);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Stop">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>524</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);
+border-radius:8px;
+}
+QPushButton:hover{
+background-color: rgb(77, 78, 79);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}
+QPushButton:pressed{
+background-color: rgb(65, 66, 67);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_File">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>741</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 12.5pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Files List</string>
+    </property>
+    <widget class="QListWidget" name="listWidget_File">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>28</y>
+       <width>721</width>
+       <height>193</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(81, 82, 83);
+font: 10.5pt &quot;Arial&quot;;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_Progress">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>524</y>
+      <width>381</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar
+{
+	color: rgb(255, 255, 255);
+	border-style: outset;
+    border-width: 5px;
+	border-color: rgb(142, 142, 142);
+	background-color: rgb(81, 82, 83);
+    border-radius: 5px;
+}
+QProgressBar::chunk
+{
+	background-color: rgb(0, 142, 255);
+}</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="textVisible">
+     <bool>true</bool>
+    </property>
+    <property name="format">
+     <string>Processing... (%p%)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_TimeTaken">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>524</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(81, 82, 83); color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>Time taken: 00:00:00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Total">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>270</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(81, 82, 83); color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>Total: 0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>741</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_Upscaler">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="title">
+      <string>Real-ESRGAN-CUGAN</string>
+     </property>
+     <widget class="QLabel" name="label_TileSize">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>40</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Tile size:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_IncTileSize">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>40</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);
+border-radius:8px;
+}
+QPushButton:hover{
+background-color: rgb(77, 78, 79);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}
+QPushButton:pressed{
+background-color: rgb(65, 66, 67);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}</string>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_TileSize">
+      <property name="geometry">
+       <rect>
+        <x>548</x>
+        <y>40</y>
+        <width>93</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Use smaller value to reduce GPU memory usage&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;0 = auto&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_DecTileSize">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>40</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(81, 82, 83);
+border-radius:8px;
+}
+QPushButton:hover{
+background-color: rgb(77, 78, 79);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}
+QPushButton:pressed{
+background-color: rgb(65, 66, 67);
+color: rgb(255, 255, 255);
+border-radius:8px;
+}</string>
+      </property>
+      <property name="text">
+       <string>–</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Modal">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>40</y>
+        <width>313</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Recommended:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;realesrgan-x4plus for image&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;realesr-animevideov3-x2 for anime video&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>realesrgan-x4plus</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realesrgan-x4plus-anime</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realesr-animevideov3-x2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realesr-animevideov3-x3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realesr-animevideov3-x4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RealESRGANv2-animevideo-xsx2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RealESRGANv2-animevideo-xsx4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>esrgan-x4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realesrnet-x4plus</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realcugan-se-x2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realcugan-se-x3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realcugan-se-x4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realcugan-pro-x2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realcugan-pro-x3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>realcugan-pro-x4</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_Modal">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Modal:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_Thread">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>80</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Thread count for the three stages (image decoding + model upscaling + image encoding), using larger values may increase GPU usage and consume more GPU memory. You can tune this configuration with &amp;quot;4:4:4&amp;quot; for many small-size images, and &amp;quot;2:2:2&amp;quot; for large-size images. The default setting usually works fine for most situations. If you find that your GPU is hungry, try increasing thread count to achieve faster processing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Only takes effect when processing a video or an image folder&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Thread">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>134</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load/Proc/Save:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_DenoiseLevel">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>80</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Denoise level:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_SyncGapMode">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>80</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sync gap mode:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_SyncGapMode">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>80</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>no sync</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>accurate</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rough</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>very rough</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_DenoiseLevel">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>80</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Large value means strong denoise effect&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;-1 = no effect&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);</string>
+      </property>
+     </widget>
+     <zorder>comboBox_Modal</zorder>
+     <zorder>label_Modal</zorder>
+     <zorder>lineEdit_Thread</zorder>
+     <zorder>label_Thread</zorder>
+     <zorder>label_TileSize</zorder>
+     <zorder>pushButton_IncTileSize</zorder>
+     <zorder>lineEdit_TileSize</zorder>
+     <zorder>pushButton_DecTileSize</zorder>
+     <zorder>label_DenoiseLevel</zorder>
+     <zorder>label_SyncGapMode</zorder>
+     <zorder>comboBox_SyncGapMode</zorder>
+     <zorder>spinBox_DenoiseLevel</zorder>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_FrameInterpolation">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="title">
+      <string>RIFE-IFRNet</string>
+     </property>
+     <widget class="QLabel" name="label_modal">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>63</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Modal:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_thread">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>40</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load/Proc/Save:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_modal">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>40</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Recommeded:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Fastest speed: rife-v4, rife-v4.1&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Best quality: rife, IFRNet_Vimeo90K&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>rife</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-anime</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-HD</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-UHD</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v2.3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v2.4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v3.0</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v3.1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>rife-v4.1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IFRNet_GoPro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IFRNet_Vimeo90K</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IFRNet_L_GoPro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IFRNet_L_Vimeo90K</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IFRNet_S_GoPro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>IFRNet_S_Vimeo90K</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_thread">
+      <property name="geometry">
+       <rect>
+        <x>608</x>
+        <y>40</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Thread count for the three stages (image decoding + modal interpolation + image encoding), using larger values may increase GPU usage and consume more GPU memory. You can tune this configuration with &amp;quot;4:4:4&amp;quot; for many small-size images, and &amp;quot;2:2:2&amp;quot; for large-size images. The default setting usually works fine for most situations. If you find that your GPU is hungry, try increasing thread count to achieve faster processing&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 82, 83);</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_UHD">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This should be enabled when processing videos with resolution higher than 3840x2160&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>UHD Mode</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>460</y>
+      <width>741</width>
+      <height>54</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="checkBox_ReProcess">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Re-process finished file</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>100</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_GpuID">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>GPU ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_GpuID">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Can be 0,1,2 for multi-gpu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(81, 82, 83);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>100</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_OutFormat">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Output file format:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_OutFormat">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(81, 82, 83);</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_Remaining">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>524</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(81, 82, 83); color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>Remaining: unknown</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>label_ToolsList</zorder>
+   <zorder>groupBox_File</zorder>
+   <zorder>pushButton_Add</zorder>
+   <zorder>pushButton_Remove</zorder>
+   <zorder>comboBox_ToolsList</zorder>
+   <zorder>pushButton_Start</zorder>
+   <zorder>pushButton_Stop</zorder>
+   <zorder>label_TimeTaken</zorder>
+   <zorder>progressBar_Progress</zorder>
+   <zorder>label_Total</zorder>
+   <zorder>splitter</zorder>
+   <zorder>frame</zorder>
+   <zorder>label_Remaining</zorder>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>listWidget_File</tabstop>
+  <tabstop>pushButton_Add</tabstop>
+  <tabstop>pushButton_Remove</tabstop>
+  <tabstop>comboBox_ToolsList</tabstop>
+  <tabstop>comboBox_Modal</tabstop>
+  <tabstop>lineEdit_TileSize</tabstop>
+  <tabstop>pushButton_IncTileSize</tabstop>
+  <tabstop>pushButton_DecTileSize</tabstop>
+  <tabstop>lineEdit_Thread</tabstop>
+  <tabstop>spinBox_DenoiseLevel</tabstop>
+  <tabstop>comboBox_SyncGapMode</tabstop>
+  <tabstop>comboBox_modal</tabstop>
+  <tabstop>lineEdit_thread</tabstop>
+  <tabstop>checkBox_UHD</tabstop>
+  <tabstop>checkBox_ReProcess</tabstop>
+  <tabstop>lineEdit_GpuID</tabstop>
+  <tabstop>lineEdit_OutFormat</tabstop>
+  <tabstop>pushButton_Start</tabstop>
+  <tabstop>pushButton_Stop</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
